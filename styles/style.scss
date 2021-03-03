@@ -1,0 +1,101 @@
+:root {
+    font-size: 10px;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+@font-face {
+    font-family: Montserrat;
+    src: url("/fonts/Montserrat-Bold.woff2") format("woff2"),
+        url("/fonts/Montserrat-Regular.woff2") format("woff2");
+}
+
+body {
+    font-family: Montserrat;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    width: 100vw;
+    overflow: hidden;
+    position: relative;
+}
+
+.loadingImage {
+    height: 1000px;
+    width: 1000px;
+    position: absolute;
+    &.spinning {
+        -webkit-animation:spin 3s linear infinite;
+        -moz-animation:spin 3s linear infinite;
+        animation: spin 3s linear infinite;
+    }
+    &.scale {
+        animation: scale .5s linear;
+    }
+}
+
+.backgroundImage {
+    z-index: -1;
+    height: 1000px;
+    width: 1000px;
+    position: fixed;
+    transform: scale(8);
+}
+
+@-moz-keyframes spin { 100% { -moz-transform: rotate(360deg); } }
+@-webkit-keyframes spin { 100% { -webkit-transform: rotate(360deg); } }
+@keyframes spin { 100% { -webkit-transform: rotate(360deg); transform:rotate(360deg); } }
+
+@keyframes scale {
+    100% {
+        transform: scale(8);
+    }
+}
+
+.ageConfirmation {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    h1 {
+        color: white;
+        font-size: 8rem;
+    }
+    div {
+        width: 100%;
+        display: flex;
+        justify-content: space-around;
+        button {
+            border: none;
+            background: transparent;
+            color: white;
+            font-size: 8rem;
+        }
+    }
+}
+
+@media only screen and (max-device-width: 1000px) {
+    .backgroundImage {
+        transform: scale(4);
+    }
+
+    @keyframes scale {
+        100% {
+            transform: scale(4);
+        }
+    }
+}
