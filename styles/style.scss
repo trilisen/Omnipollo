@@ -88,6 +88,11 @@ body {
     }
 }
 
+.tooYoung {
+    @extend .ageConfirmation;
+    display: none;
+}
+
 @media only screen and (max-device-width: 1000px) {
     .backgroundImage {
         transform: scale(4);
