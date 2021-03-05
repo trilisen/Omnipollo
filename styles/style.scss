@@ -24,7 +24,6 @@
 }
 
 body {
-    background: #A51E1E;
     font-family: Montserrat;
     padding: 0;
     margin: 0;
@@ -104,9 +103,9 @@ body {
 }
 
 .mainContainer {
+    display: none;
     z-index: -1;
     background: beige;
-    display: flex;
     align-items: center;
     flex-direction: column;
     width: 90vw;

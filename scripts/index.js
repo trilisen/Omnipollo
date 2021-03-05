@@ -20,6 +20,7 @@ yesBtn.addEventListener('click', (e) => {
         return nextweek;
     }
     document.cookie = `loggedIn=true; expires=${nextweek()}`;
+    loadMainContent();
 })
 
 const noBtn = document.querySelector(".ageConfirmation div .no");
@@ -31,8 +32,15 @@ noBtn.addEventListener('click', (e) => {
 })
 
 if (document.cookie === "loggedIn=true"){
+    loadMainContent();
+}
+
+function loadMainContent() {
     const ageConfirmation = document.querySelector(".ageConfirmation");
     ageConfirmation.style.display = "none";
     loadingImage.classList.remove("loadingImage");
     loadingImage.classList.add("backgroundImage");
+    const mainContainer = document.querySelector(".mainContainer");
+    mainContainer.style.display = "flex";
+    document.body.style.background = "#A51E1E"
 }
