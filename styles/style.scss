@@ -14,7 +14,17 @@
         url("/fonts/Montserrat-Regular.woff2") format("woff2");
 }
 
+@mixin div-same-size-as-background-img($url) {
+    background-image: url($url);     
+    background-size: contain;     
+    background-repeat: no-repeat;     
+    width: 100%;     
+    height: 0;     
+    padding-top: percentage(645 / 1919); 
+}
+
 body {
+    background: #A51E1E;
     font-family: Montserrat;
     padding: 0;
     margin: 0;
@@ -92,6 +102,61 @@ body {
     @extend .ageConfirmation;
     display: none;
 }
+
+.mainContainer {
+    z-index: -1;
+    background: beige;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    width: 90vw;
+    height: 100vh;
+    header {
+        width: 100%;
+        height: 500px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        position: relative;
+        img {
+            z-index: -1;
+            position: absolute;
+            top:0; bottom:0; left:0; right:0;
+            width: 100%;
+            user-select: none;
+            -moz-user-select: none;
+            -webkit-user-drag: none;
+            -webkit-user-select: none;
+            -ms-user-select: none;
+        }
+        .text {
+            font-size: 6rem;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            p {
+                font-size: 3rem;
+            }
+            margin-bottom: 20px;
+        }
+    }
+}
+
+.bars {
+    width: 70%;
+    .big {
+        background: black;
+        height: 15px;
+        margin-bottom: 10px;
+    }
+    .small {
+        background: black;
+        height: 10px;
+    }
+}
+
 
 @media only screen and (max-device-width: 1000px) {
     .backgroundImage {
