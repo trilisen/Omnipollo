@@ -42,5 +42,6 @@ function loadMainContent() {
     loadingImage.classList.add("backgroundImage");
     const mainContainer = document.querySelector(".mainContainer");
     mainContainer.style.display = "flex";
-    document.body.style.background = "#A51E1E"
+    document.body.style.background = "#A51E1E";
+    document.body.style.height = "fit-content";
 }
