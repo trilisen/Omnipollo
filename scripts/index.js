@@ -1,4 +1,5 @@
 import * as data from './../guest.json';
+import 'animate.css';
 
 // The loading animation
 const loadingImage = document.querySelector(".loadingImage");
@@ -31,13 +32,13 @@ const yesBtn = document.querySelector(".ageConfirmation div .yes");
 
 // Using cookies in order to not show the intro animation every time. This cookie expires in week from when the button is pressed.
 yesBtn.addEventListener('click', (e) => {
-    e.path[2].style.display = "none";
     function nextweek(){
         var today = new Date();
         var nextweek = new Date(today.getFullYear(), today.getMonth(), today.getDate()+7);
         return nextweek;
     }
     document.cookie = `loggedIn=true; expires=${nextweek()}`;
+    e.path[2].style.display = "none";
     loadMainContent();
 })
 
@@ -45,7 +46,7 @@ yesBtn.addEventListener('click', (e) => {
 const noBtn = document.querySelector(".ageConfirmation div .no");
 
 noBtn.addEventListener('click', (e) => {
-e.path[2].style.display = "none";
+    e.path[2].style.display = "none";
     const tooYoung = document.querySelector(".tooYoung");
     tooYoung.style.display = "flex";
 })
