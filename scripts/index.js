@@ -79,9 +79,12 @@ const locationElement = document.querySelector(".location");
 const urlParams = new URLSearchParams(window.location.search);
 let id = urlParams.get('id');
 if (urlParams.has('id')) {
-    guestName.textContent = data.guests[id].name;
+    guestName.textContent = ` ${data.guests[id].name}`;
     let destination = assignDestination(data.guests[id].group);
-    locationElement.textContent = destination;
+    locationElement.textContent =  ` ${destination}`;
+}else {
+    guestName.textContent = "";
+    locationElement.textContent = " JÄRNTORGET";
 }
 
 function assignDestination(group){
