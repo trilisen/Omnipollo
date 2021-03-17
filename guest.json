@@ -1,0 +1,68 @@
+{
+    "guests": [
+        {
+            "name":"Julia",
+            "group": 1
+        },
+        {
+            "name":"Ellen",
+            "group": 1
+        },
+        {
+            "name":"Fanny",
+            "group": 1
+        },
+        {
+            "name":"Sarah",
+            "group":1
+        },
+        {
+            "name":"Evelina",
+            "group":1
+        },
+        {
+            "name":"Josefin",
+            "group":1
+        },
+        {
+            "name":"Frida",
+            "group":1
+        },
+        {
+            "name":"Lisa",
+            "group":1
+        },
+        {
+            "name":"Matilda",
+            "group":2
+        },
+        {
+            "name":"Teresa",
+            "group":2
+        },
+        {
+            "name":"Adam",
+            "group":2
+        },
+        {
+            "name":"Philip",
+            "group":2
+        },
+        {
+            "name":"Lisa",
+            "group":2
+        },
+        {
+            "name":"Johanna",
+            "group":2
+        },
+        {
+            "name":"Alda",
+            "group":2
+        },
+        {
+            "name":"Josefin",
+            "group":2
+        }
+    ]
+}

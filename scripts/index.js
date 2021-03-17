@@ -1,3 +1,6 @@
+import * as data from './../guest.json';
+
+// The loading animation
 const loadingImage = document.querySelector(".loadingImage");
 
 setTimeout(() => {
@@ -5,6 +8,7 @@ setTimeout(() => {
     loadingImage.classList.add("scale");
 }, 3000)
 
+// If the user prefers reduced motion it doesn't run the intro animation
 const preferReducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)");
 
 if (!preferReducedMotion || preferReducedMotion.matches) {
@@ -15,6 +19,7 @@ if (!preferReducedMotion || preferReducedMotion.matches) {
     })
 }
 
+// The second stage of the intro / age confirmation window because we "sell" beer
 function showAgeConfirmation() {
     loadingImage.classList.remove("loadingImage");
     loadingImage.classList.add("backgroundImage");
@@ -22,9 +27,9 @@ function showAgeConfirmation() {
     ageConfirmation.style.display = "flex";
 }
 
-
 const yesBtn = document.querySelector(".ageConfirmation div .yes");
 
+// Using cookies in order to not show the intro animation every time. This cookie expires in week from when the button is pressed.
 yesBtn.addEventListener('click', (e) => {
     e.path[2].style.display = "none";
     function nextweek(){
@@ -36,10 +41,11 @@ yesBtn.addEventListener('click', (e) => {
     loadMainContent();
 })
 
+// In case the no button is pressed.
 const noBtn = document.querySelector(".ageConfirmation div .no");
 
 noBtn.addEventListener('click', (e) => {
-    e.path[2].style.display = "none";
+e.path[2].style.display = "none";
     const tooYoung = document.querySelector(".tooYoung");
     tooYoung.style.display = "flex";
 })
@@ -48,6 +54,7 @@ if (document.cookie === "loggedIn=true"){
     loadMainContent();
 }
 
+// Load the main site
 function loadMainContent() {
     const ageConfirmation = document.querySelector(".ageConfirmation");
     ageConfirmation.style.display = "none";
@@ -59,8 +66,30 @@ function loadMainContent() {
     document.body.style.height = "fit-content";
 }
 
+// Reset the cookie for testing purposes
 const resetBtn = document.querySelector(".resetAnimation");
 resetBtn.addEventListener('click', () => {
     document.cookie = `loggedIn=false`;
     location.reload();
 })
+
+// Gets info from JSON and changes the relevant html elements text content
+const guestName = document.querySelector(".name");
+const location = document.querySelector(".location");
+const urlParams = new URLSearchParams(window.location.search);
+let id = urlParams.get('id');
+if (urlParams.has('id')) {
+    guestName.textContent = data.guests[id].name;
+    let destination = assignDestination(data.guests[id].group);
+    location.textContent = destination;
+}
+
+function assignDestination(group){
+    if (group === 1){
+        return "JÄRNTORGET";
+    }else if (group === 2){
+        return "VASAPLATSEN";
+    }else {
+        return null;
+    }
+}
