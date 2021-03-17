@@ -75,13 +75,13 @@ resetBtn.addEventListener('click', () => {
 
 // Gets info from JSON and changes the relevant html elements text content
 const guestName = document.querySelector(".name");
-const location = document.querySelector(".location");
+const locationElement = document.querySelector(".location");
 const urlParams = new URLSearchParams(window.location.search);
 let id = urlParams.get('id');
 if (urlParams.has('id')) {
     guestName.textContent = data.guests[id].name;
     let destination = assignDestination(data.guests[id].group);
-    location.textContent = destination;
+    locationElement.textContent = destination;
 }
 
 function assignDestination(group){
