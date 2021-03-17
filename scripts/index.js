@@ -5,10 +5,23 @@ setTimeout(() => {
     loadingImage.classList.add("scale");
 }, 3000)
 
-loadingImage.addEventListener('animationend', () => {
+const preferReducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)");
+
+if (!preferReducedMotion || preferReducedMotion.matches) {
+    showAgeConfirmation();
+} else {
+    loadingImage.addEventListener('animationend', () => {
+        showAgeConfirmation();
+    })
+}
+
+function showAgeConfirmation() {
     loadingImage.classList.remove("loadingImage");
     loadingImage.classList.add("backgroundImage");
-})
+    const ageConfirmation = document.querySelector(".ageConfirmation");
+    ageConfirmation.style.display = "flex";
+}
+
 
 const yesBtn = document.querySelector(".ageConfirmation div .yes");
 
@@ -28,7 +41,7 @@ const noBtn = document.querySelector(".ageConfirmation div .no");
 noBtn.addEventListener('click', (e) => {
     e.path[2].style.display = "none";
     const tooYoung = document.querySelector(".tooYoung");
-    tooYoung.style.display = "initial";
+    tooYoung.style.display = "flex";
 })
 
 if (document.cookie === "loggedIn=true"){
@@ -45,3 +58,9 @@ function loadMainContent() {
     document.body.style.background = "#A51E1E";
     document.body.style.height = "fit-content";
 }
+
+const resetBtn = document.querySelector(".resetAnimation");
+resetBtn.addEventListener('click', () => {
+    document.cookie = `loggedIn=false`;
+    location.reload();
+})
