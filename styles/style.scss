@@ -1,24 +1,26 @@
 :root {
-    font-size: 10px;
+  font-size: 10px;
+}
+html {
+  scroll-behavior: smooth;
 }
 
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
 @font-face {
-    font-family: PTSerif;
-    src: url("/fonts/PTSerif-Bold.woff2") format("woff2"),
-        url("/fonts/PTSerif-Regular.woff2") format("woff2");
+  font-family: PTSerif;
+  src: url("/fonts/PTSerif-Bold.woff2") format("woff2"),
+    url("/fonts/PTSerif-Regular.woff2") format("woff2");
 }
 
-
 body {
-    font-family: PTSerif;
-    padding: 0;
-    margin: 0;
+  font-family: PTSerif;
+  padding: 0;
+  margin: 0;
 }
 
 // .container {
@@ -31,267 +33,352 @@ body {
 // }
 
 .backgroundContainer {
-    z-index: -1;
-    position: fixed;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-    width: 100vw;
-    top: 0;
-    margin: auto;
+  z-index: -1;
+  position: fixed;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  width: 100vw;
+  top: 0;
+  margin: auto;
 }
 
 .loadingImage {
-    height: 1000px;
-    width: 1000px;
-    &.spinning {
-        -webkit-animation:spin 3s linear infinite;
-        -moz-animation:spin 3s linear infinite;
-        animation: spin 3s linear infinite;
-    }
-    &.scale {
-        animation: scale .5s linear;
-    }
+  height: 1000px;
+  width: 1000px;
+  &.spinning {
+    -webkit-animation: spin 3s linear infinite;
+    -moz-animation: spin 3s linear infinite;
+    animation: spin 3s linear infinite;
+  }
+  &.scale {
+    animation: scale 0.5s linear;
+  }
 }
 
 .backgroundImage {
-    transform: scale(8);
+  transform: scale(8);
 }
 
-@-moz-keyframes spin { 100% { -moz-transform: rotate(360deg); } }
-@-webkit-keyframes spin { 100% { -webkit-transform: rotate(360deg); } }
-@keyframes spin { 100% { -webkit-transform: rotate(360deg); transform:rotate(360deg); } }
+@-moz-keyframes spin {
+  100% {
+    -moz-transform: rotate(360deg);
+  }
+}
+@-webkit-keyframes spin {
+  100% {
+    -webkit-transform: rotate(360deg);
+  }
+}
+@keyframes spin {
+  100% {
+    -webkit-transform: rotate(360deg);
+    transform: rotate(360deg);
+  }
+}
 
 @keyframes scale {
-    100% {
-        transform: scale(8);
-    }
+  100% {
+    transform: scale(8);
+  }
 }
 
 .ageConfirmation {
-    height: 100vh;
-    display: none;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-    h1 {
-        color: white;
-        font-size: 8rem;
+  height: 100vh;
+  display: none;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  h1 {
+    color: white;
+    font-size: 8rem;
+  }
+  div {
+    width: 50%;
+    display: flex;
+    justify-content: space-around;
+    button {
+      border: none;
+      background: transparent;
+      color: white;
+      font-size: 8rem;
     }
-    div {
-        width: 50%;
-        display: flex;
-        justify-content: space-around;
-        button {
-            border: none;
-            background: transparent;
-            color: white;
-            font-size: 8rem;
-        }
-    }
+  }
 }
 
 .tooYoung {
-    @extend .ageConfirmation;
-    display: none;
-    h2 {
-        color: white;
-        font-size: 8rem;
-    }
+  @extend .ageConfirmation;
+  display: none;
+  h2 {
+    color: white;
+    font-size: 8rem;
+  }
 }
 
 .mainContainer {
-    margin: 5vw;
-    display: none;
-    z-index: -1;
-    background: rgb(255, 255, 255);
-    align-items: center;
-    flex-direction: column;
-    width: 90vw;
+  margin: 5vw;
+  display: none;
+  z-index: -1;
+  background: rgb(255, 255, 255);
+  align-items: center;
+  flex-direction: column;
+  width: 90vw;
 }
 
 header {
-    height: 500px;
-    width: 100%;
-    background-image: url("/img/foto_grupp.svg");
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-position: center center;
+  height: 500px;
+  width: 100%;
+  background-image: url("/img/foto_grupp.svg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  .text {
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     position: relative;
-    .text {
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-        position: relative;
-        h1 {
-            font-size: 10rem;
-        }
-        p {
-            font-size: 3rem;
-            font-family: 'Courier New', Courier, monospace;
-            font-weight: bold;
-        }
-        margin-bottom: 20px;
-        
+    h1 {
+      font-size: 10rem;
     }
-}
-
-.smiley {
-    position: absolute;
-    top: -20px;
-    left: -60px;
-    width: 150px;
-    transform: rotate(-30deg);
+    .smiley {
+      position: absolute;
+      top: -20px;
+      left: -60px;
+      width: 150px;
+      transform: rotate(-30deg);
+      transition: transform 0.5s cubic-bezier(0.63, 2.6, 0.58, 0.21) 0.1s;
+    }
+    h1:hover + .smiley,
+    .smiley:hover {
+      transform: rotate(-110deg);
+    }
+    p {
+      font-size: 3rem;
+      font-family: "Courier New", Courier, monospace;
+      font-weight: bold;
+    }
+    margin-bottom: 20px;
+  }
 }
 
 .signUp {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    margin-top: 20px;
-    font-size: 3rem;
-    button {
-        color: black;
-        font-family: PTSerif;
-        margin-top: 1rem;
-        padding: 1rem;
-        background: rgb(255, 234, 48);
-        border: none;
-        border-radius: 10px;
-        box-shadow: 2px 2px 4px 2px rgb(119, 119, 119);
-    }
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 20px;
+  font-size: 3rem;
+  button {
+    color: black;
+    font-family: PTSerif;
+    font-size: 2rem;
+    margin-top: 1rem;
+    padding: 1rem;
+    background: rgb(255, 234, 48);
+    border: none;
+    border-radius: 10px;
+    box-shadow: 2px 2px 4px 2px rgb(119, 119, 119);
+    transition: 0.3s ease;
+  }
+  button:hover {
+    background: black;
+    color: rgb(255, 234, 48);
+  }
 }
 
 .resetAnimation {
-    z-index: 2;
-    position: absolute;
-    top: 0;
-    right: 0;
+  z-index: 2;
+  position: absolute;
+  top: 0;
+  right: 0;
 }
 
-.mainContainer .gallery{
-    padding: 4rem;
-    display: grid;
-    width: 100%;
-    grid-template-columns: repeat(4, 25%);
-    grid-auto-rows: 300px;
-    .item {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        font-size: 2rem;
-        img {
-            width: 50%;
-        }
-    }
-
-}
-
-.bars {
-    width: 70%;
-    .big {
-        background: black;
-        height: 8px;
-        margin-bottom: 5px;
-    }
-    .small {
-        background: black;
-        height: 5px;
-    }
-}
-
-.ctaArea {
+.mainContainer .gallery {
+  padding: 4rem;
+  display: grid;
+  width: 100%;
+  grid-template-columns: repeat(4, 25%);
+  grid-auto-rows: 300px;
+  .item {
     display: flex;
     justify-content: center;
     align-items: center;
-    flex-direction: column;
-    width: 100%;
-    h2 {
-        font-size: 8rem;
+    font-size: 2rem;
+    img {
+      width: 50%;
     }
-    .artContainer {
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        p {
-            margin: 2rem;
-            width: 200px;
-            font-size: 2rem;
-        }
+  }
+}
+
+.bars {
+  width: 70%;
+  .big {
+    background: black;
+    height: 8px;
+    margin-bottom: 5px;
+  }
+  .small {
+    background: black;
+    height: 5px;
+  }
+}
+
+.ctaArea {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  width: 100%;
+  h2 {
+    font-size: 8rem;
+  }
+  .artContainer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    p {
+      margin: 2rem;
+      width: 200px;
+      font-size: 2rem;
     }
-    
+  }
 }
 
 .brewImg {
-    max-width: 50vw;
-    margin: 50px 0 50px 0;
-    height: 30vw;
+  max-width: 50vw;
+  margin: 50px 0 50px 0;
+  height: 30vw;
 }
 
 footer {
-
-    width: 80%;
-    margin-bottom: 10vw;
+  width: 80%;
+  margin-bottom: 10vw;
 }
 
+// gallery animation
+.gallery {
+  .item {
+    transition: transform 0.3s ease;
+  }
+  .item:hover {
+    transform: scale(1.1);
+  }
+}
+
+// cta animation
+.ctaArea {
+  .underlined {
+    height: 4px;
+    width: 482px;
+    background: black;
+    transition: transform 0.3s ease-out 0.5s;
+  }
+  .underlined.notAnimated {
+    transform: scaleX(0);
+  }
+  .underlined.animated {
+    transform: scaleX(1);
+  }
+}
+
+// Sign up form
+form {
+  display: flex;
+  flex-direction: column;
+  font-size: 2rem;
+  input {
+    font-size: 2.5rem;
+  }
+  button {
+    align-self: center;
+    color: black;
+    font-family: PTSerif;
+    font-size: 2rem;
+    margin-top: 2rem;
+    padding: 1rem;
+    background: rgb(255, 234, 48);
+    border: none;
+    max-width: 40%;
+    border-radius: 10px;
+    box-shadow: 2px 2px 4px 2px rgb(119, 119, 119);
+    transition: 0.3s ease;
+  }
+  button:hover {
+    background: black;
+    color: rgb(255, 234, 48);
+  }
+}
 
 @media only screen and (max-device-width: 800px) {
-    .backgroundImage {
-        transform: scale(8);
+  .backgroundImage {
+    transform: scale(8);
+  }
+
+  @keyframes scale {
+    100% {
+      transform: scale(8);
+    }
+  }
+
+  .ageConfirmation {
+    h1 {
+      font-size: 10vw;
+    }
+    div {
+      width: 100%;
+    }
+  }
+
+  .mainContainer header {
+    .text {
+      h1 {
+        font-size: 10vw;
+      }
+      p {
+        font-size: 3vw;
+      }
+    }
+    .signUp {
+      font-size: 3vw;
+    }
+  }
+
+  .mainContainer .gallery {
+    grid-template-columns: repeat(1, 1fr);
+  }
+
+  .ctaArea {
+    h2 {
+      font-size: 8vw;
+      margin-bottom: 1rem;
+    }
+    .underlined {
+      width: 48vw;
+    }
+    form {
+      max-width: 70vw;
+      font-size: 1.6rem;
+    }
+    input {
+      font-size: 1.8rem;
+    }
+    button {
+      max-width: 60%;
     }
 
-    @keyframes scale {
-        100% {
-            transform: scale(8);
-        }
+    .artContainer {
+      flex-direction: column;
     }
+  }
 
-    .ageConfirmation {
-        h1 {
-            font-size: 10vw;
-        }
-        div {
-            width: 100%;
-        }
-    }
-
-    .mainContainer header {
-        .text {
-            h1 {
-                font-size: 10vw;
-            }
-            p {
-                font-size: 3vw;
-            }
-        }
-        .signUp {
-            font-size: 3vw;
-        }
-    }
-
-    .mainContainer .gallery {
-        grid-template-columns: repeat(1, 1fr);
-
-    }
-
-    .ctaArea {
-        h2 {
-            font-size: 8vw;
-            margin-bottom: 1rem;
-        }
-        .artContainer {
-            flex-direction: column;
-        }
-    }
-
-    .brewImg {
-        max-width: 90vw;
-        height: 50vw;
-    }
+  .brewImg {
+    max-width: 90vw;
+    height: 50vw;
+  }
 }

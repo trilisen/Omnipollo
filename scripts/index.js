@@ -24,6 +24,8 @@ if (!preferReducedMotion || preferReducedMotion.matches) {
 function showAgeConfirmation() {
     loadingImage.classList.remove("loadingImage");
     loadingImage.classList.add("backgroundImage");
+    underlined.classList.remove("animated");
+    underlined.classList.add("notAnimated");
     const ageConfirmation = document.querySelector(".ageConfirmation");
     ageConfirmation.style.display = "flex";
 }
@@ -97,3 +99,63 @@ function assignDestination(group){
         return null;
     }
 }
+
+// Animate when in viewport by scrolling.
+// Due to bug with underlineds classes not working properly with this script,
+// it's set to notAnimated in the function showAgeConfirmation
+let underlined = document.querySelector(".underlined");
+
+const animateHTML = function() {
+    let elements;
+    let windowHeight;
+    function init() {
+      elements = document.querySelectorAll('.notAnimated');
+      windowHeight = window.innerHeight;
+      addEventHandlers();
+      checkPosition();
+    }
+    function addEventHandlers() {
+      window.addEventListener('scroll', checkPosition);
+      window.addEventListener('resize', init);
+    }
+    function checkPosition() {
+      for (var i = 0; i < elements.length; i++) {
+        var positionFromTop = elements[i].getBoundingClientRect().top;
+        if (positionFromTop - windowHeight <= 0) {
+          elements[i].className = elements[i].className.replace(
+            'notAnimated',
+            'animated'
+          );
+        }
+      }
+    }
+    return {
+      init: init
+    };
+  };
+  animateHTML().init();
+// document.addEventListener("DOMContentLoaded", function(event) {
+//     document.addEventListener("scroll", function(event) {
+//         const animatedBoxes = document.getElementsByClassName("animated-box");
+//         const windowOffsetTop = window.innerHeight + window.scrollY;
+
+//         Array.prototype.forEach.call(animatedBoxes, (animatedBox) => {
+//             const animatedBoxOffsetTop = animatedBox.offsetTop;
+
+//             if (windowOffsetTop >= animatedBoxOffsetTop) {
+//                 addClass(animatedBox, "fade-in");
+//             }
+//         });
+//     });
+// });
+
+// function addClass(element, className) {
+//     const arrayClasses = element.className.split(" ");
+//     if (arrayClasses.indexOf(className) === -1) {
+//         element.className += " " + className;
+//     }
+// }
+
+
+
+    
