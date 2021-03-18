@@ -1,3 +1,0 @@
-- https://scrollrevealjs.org/
-- https://animate.style/
-- https://www.codeinwp.com/blog/best-javascript-animation-libraries/
