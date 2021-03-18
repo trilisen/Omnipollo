@@ -14,7 +14,7 @@ https://omnipollo.netlify.app/
 ### By [Jon McGarvie](https://github.com/trilisen) & [Victor Stranne](https://github.com/Vstranne)
 
 
-## Review Omnipolli - Hugo Sundberg
+## Review Omnipollo - Hugo Sundberg
 1. Links and buttons do not have pointer cursor on hover
 2. Images are big relative to their displayed size
 3. A bit tight in gallery section just over 800px screen-width
