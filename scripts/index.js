@@ -20,7 +20,11 @@ if (!preferReducedMotion || preferReducedMotion.matches) {
     })
 }
 
+const cookieAcceptBox = document.querySelector(".cookieAccept");
+
 // The second stage of the intro / age confirmation window because we "sell" beer
+// Due to bug with underlineds classes not working properly with this script,
+// underlined is set to notAnimated
 function showAgeConfirmation() {
     loadingImage.classList.remove("loadingImage");
     loadingImage.classList.add("backgroundImage");
@@ -28,6 +32,7 @@ function showAgeConfirmation() {
     underlined.classList.add("notAnimated");
     const ageConfirmation = document.querySelector(".ageConfirmation");
     ageConfirmation.style.display = "flex";
+    cookieAcceptBox.style.display = "flex";
 }
 
 const yesBtn = document.querySelector(".ageConfirmation div .yes");
@@ -40,7 +45,8 @@ yesBtn.addEventListener('click', (e) => {
         return nextweek;
     }
     document.cookie = `loggedIn=true; expires=${nextweek()}`;
-    e.path[2].style.display = "none";
+    let path = e.path || e.composedPath();
+    path[2].style.display = "none";
     loadMainContent();
 })
 
@@ -56,6 +62,8 @@ noBtn.addEventListener('click', (e) => {
 if (document.cookie === "loggedIn=true"){
     loadMainContent();
 }
+
+
 
 // Load the main site
 function loadMainContent() {
@@ -136,6 +144,11 @@ const animateHTML = function() {
   animateHTML().init();
 
 
+// Cookie accept button
 
+const cookieAcceptBtn = document.querySelector('.cookieBtn');
 
-    
+cookieAcceptBtn.addEventListener('click', (e) => {
+    // On press remove element
+    cookieAcceptBox.style.display = "none";
+})    
