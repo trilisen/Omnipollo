@@ -1,134 +1,186 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
     <!-- Primary Meta Tags -->
     <title>Omnipollo beer release party!</title>
-    <meta name="title" content="Omnipollo beer release party!">
-    <meta name="description" content="Omnipollo presents an invite to our beer release party.">
+    <meta name="title" content="Omnipollo beer release party!" />
+    <meta
+      name="description"
+      content="Omnipollo presents an invite to our beer release party."
+    />
 
     <!-- Open Graph / Facebook -->
-    <meta property="og:type" content="website">
-    <meta property="og:url" content="https://omnipollo.netlify.app/">
-    <meta property="og:title" content="Omnipollo beer release party!">
-    <meta property="og:description" content="Omnipollo presents an invite to our beer release party.">
-    <meta property="og:image" content="https://omnipollo.netlify.app/foto_grupp.70d0aa58.svg">
-    
-    <!-- Twitter -->
-    <meta property="twitter:card" content="summary_large_image">
-    <meta property="twitter:url" content="https://omnipollo.netlify.app/">
-    <meta property="twitter:title" content="Omnipollo beer release party!">
-    <meta property="twitter:description" content="Omnipollo presents an invite to our beer release party.">
-    <meta property="twitter:image" content="https://omnipollo.netlify.app/foto_grupp.70d0aa58.svg">
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://omnipollo.netlify.app/" />
+    <meta property="og:title" content="Omnipollo beer release party!" />
+    <meta
+      property="og:description"
+      content="Omnipollo presents an invite to our beer release party."
+    />
+    <meta
+      property="og:image"
+      content="https://omnipollo.netlify.app/foto_grupp.70d0aa58.svg"
+    />
 
-    <link rel="stylesheet" href="/styles/style.scss">
-    <link rel="icon" href="/img/cirkel_gradient.svg">
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image" />
+    <meta property="twitter:url" content="https://omnipollo.netlify.app/" />
+    <meta property="twitter:title" content="Omnipollo beer release party!" />
+    <meta
+      property="twitter:description"
+      content="Omnipollo presents an invite to our beer release party."
+    />
+    <meta
+      property="twitter:image"
+      content="https://omnipollo.netlify.app/foto_grupp.70d0aa58.svg"
+    />
+
+    <link rel="stylesheet" href="/styles/style.scss" />
+    <link rel="icon" href="/img/cirkel_gradient.svg" />
     <title>Omnipollo</title>
-</head>
-<body>
+  </head>
+  <body>
     <article class="ageConfirmation">
-        <h1>Welcome<span class="name"></span>!
-            <br>
-            Are you over the age of 18?
-        </h1>
-        <div>
-            <button class="yes">Yes</button>
-            <button class="no">No</button>   
-        </div>
+      <h1>
+        Welcome<span class="name"></span>!
+        <br />
+        Are you over the age of 18?
+      </h1>
+      <div>
+        <button class="yes">Yes</button>
+        <button class="no">No</button>
+      </div>
     </article>
     <article class="tooYoung">
-        <h2>We're afraid we can't accept minors!</h2>
+      <h2>We're afraid we can't accept minors!</h2>
     </article>
     <div class="mainContainer animate__animated animate__bounceInDown">
-        <button class="resetAnimation"><img src="/img/cached_black_24dp.svg" alt="Reload"></button>
-        <header>
-            <div class="text">
-                <h1>OMNIPOLLO</h1>
-                <img src="/img/smiley.svg" alt="Smiley" class="smiley">
-                <p>BEER RELEASE PARTY INVITE</p>
-            </div>
-            <div class="bars">
-                <div class="big"></div>
-                <div class="small"></div>
-            </div>
-            <div class="signUp">
-                <p>22/6 2021 AT<span class="location"></span>!</p>
-                <a href="#ctaArea"><button>Sign up for the meetup</button></a>
-            </div>
-        </header>
-        <main class="gallery">
-            <article class="item">
-                <img src="/img/mockupcan_smiley.png" alt="Beercan with smiley print">
-                <div class="text">
-                    <h3><strong>SMILEY BREW</strong></h3><p>7% by vol.<br>IPA<br>True happiness<br>Made with love!</p>
-                </div>
-            </article>
-            <article class="item">
-                <img src="/img/mockupcan_optical.png" alt="Beercan with pink and white pattern">
-                <div class="text">
-                    <h3><strong>PSYCHO LAGER</strong></h3><p>18% by vol.<br>DIPA<br>Get buzzed<br>Not for a weakling!</p>
-                </div>
-            </article>
-            <article class="item">
-                <img src="/img/mockupcan.png" alt="Beercan with red and black print with Omnipollo written on it">
-                <div class="text">
-                    <h3><strong>OMNI SPECIAL</strong></h3><p>4,5% by vol.<br>LAGER<br>Season special<br>Our own favorite!</p>
-                </div>
-            </article>
-            <article class="item">
-                <img src="/img/mockupcan_O.png" alt="Beercan with a black and white pattern with an O.">
-                <div class="text">
-                    <h3><strong>PSYCHO VIRGIN</strong></h3><p>0% by vol.<br>DIPA<br>Alcohol free<br>For the taxi driver!</p>
-                </div>
-            </article> 
-        </main>
-        <div class="ctaArea" id="ctaArea">
-            <h2>Sign up here</h2>
-            <div class="underlined notAnimated"></div><br>
-            <form class="signUpForm">
-                <label for="firstName">First name:</label>
-                <input type="text" id="firstName" name="firstName" required/>
-                <label for="lastName">Last name:</label>
-                <input type="text" id="lastName" name="lastName" required/>
-                <label for="email">Email:</label>
-                <input type="email" id="email" name="email" required/>
-                <button type="submit">Sign up!</button><br>
-            </form>
-            <div class="bars">
-                <div class="big"></div>
-                <div class="small"></div>
-            </div>
-            <div class="artContainer">
-                <p><strong>What's up?</strong><br>We're launching our new beers and want to celebrate with a release party!</p>
-                <p><strong>When can I join?</strong><br>The event starts 18.00, come dressed as you like and enjoy our new brews!</p>
-            </div>
+      <button class="resetAnimation">
+        <img src="/img/cached_black_24dp.svg" alt="Reload" />
+      </button>
+      <header>
+        <div class="text">
+          <h1>OMNIPOLLO</h1>
+          <img src="/img/smiley.svg" alt="Smiley" class="smiley" />
+          <p>BEER RELEASE PARTY INVITE</p>
         </div>
-        <img src="/img/foto_bryggeri.jpg" alt="Brewery picture" class="brewImg">
-        <footer>
-            <span class="omnipollo">
-                <img src="/img/smiley.svg" alt="smiley" class="smiley">
-                <h3 class="title">
-                    OMNIPOLLO
-                </h3>
-            </span>
-            <span>
-                <h3 class="about">About us</h3>
-                <li><a href="">How to contact us</a></li>
-                <li><a href="">Our socials</a></li>
-                <li><a href="">How to get to us</a></li>
-            </span>
-        </footer>
+        <div class="bars">
+          <div class="big"></div>
+          <div class="small"></div>
+        </div>
+        <div class="signUp">
+          <p>22/6 2021 AT<span class="location"></span>!</p>
+          <a href="#ctaArea"><button>Sign up for the meetup</button></a>
+        </div>
+      </header>
+      <main class="gallery">
+        <article class="item">
+          <img
+            src="/img/mockupcan_smiley.png"
+            alt="Beercan with smiley print"
+          />
+          <div class="text">
+            <h3><strong>SMILEY BREW</strong></h3>
+            <p>7% by vol.<br />IPA<br />True happiness<br />Made with love!</p>
+          </div>
+        </article>
+        <article class="item">
+          <img
+            src="/img/mockupcan_optical.png"
+            alt="Beercan with pink and white pattern"
+          />
+          <div class="text">
+            <h3><strong>PSYCHO LAGER</strong></h3>
+            <p>
+              18% by vol.<br />DIPA<br />Get buzzed<br />Not for a weakling!
+            </p>
+          </div>
+        </article>
+        <article class="item">
+          <img
+            src="/img/mockupcan.png"
+            alt="Beercan with red and black print with Omnipollo written on it"
+          />
+          <div class="text">
+            <h3><strong>OMNI SPECIAL</strong></h3>
+            <p>
+              4,5% by vol.<br />LAGER<br />Season special<br />Our own favorite!
+            </p>
+          </div>
+        </article>
+        <article class="item">
+          <img
+            src="/img/mockupcan_O.png"
+            alt="Beercan with a black and white pattern with an O."
+          />
+          <div class="text">
+            <h3><strong>PSYCHO VIRGIN</strong></h3>
+            <p>
+              0% by vol.<br />DIPA<br />Alcohol free<br />For the taxi driver!
+            </p>
+          </div>
+        </article>
+      </main>
+      <div class="ctaArea" id="ctaArea">
+        <h2>Sign up here</h2>
+        <div class="underlined notAnimated"></div>
+        <br />
+        <form class="signUpForm">
+          <label for="firstName">First name:</label>
+          <input type="text" id="firstName" name="firstName" required />
+          <label for="lastName">Last name:</label>
+          <input type="text" id="lastName" name="lastName" required />
+          <label for="email">Email:</label>
+          <input type="email" id="email" name="email" required />
+          <button type="submit">Sign up!</button><br />
+        </form>
+        <div class="bars">
+          <div class="big"></div>
+          <div class="small"></div>
+        </div>
+        <div class="artContainer">
+          <p>
+            <strong>What's up?</strong><br />We're launching our new beers and
+            want to celebrate with a release party!
+          </p>
+          <p>
+            <strong>When can I join?</strong><br />The event starts 18.00, come
+            dressed as you like and enjoy our new brews!
+          </p>
+        </div>
+      </div>
+      <img src="/img/foto_bryggeri.jpg" alt="Brewery picture" class="brewImg" />
+      <footer>
+        <span class="omnipollo">
+          <img src="/img/smiley.svg" alt="smiley" class="smiley" />
+          <h3 class="title">OMNIPOLLO</h3>
+        </span>
+        <span>
+          <h3 class="about">About us</h3>
+          <li><a href="">How to contact us</a></li>
+          <li><a href="">Our socials</a></li>
+          <li><a href="">How to get to us</a></li>
+        </span>
+      </footer>
     </div>
     <div class="backgroundContainer">
-        <img class="loadingImage spinning" src="/img/cirkel_gradient.svg" alt="Loading or background image">
+      <img
+        class="loadingImage spinning"
+        src="/img/cirkel_gradient.svg"
+        alt="Loading or background image"
+      />
     </div>
     <div class="cookieAccept">
-        <p>We use first-party cookies on this website. <small>Only strictly necessary ones.</small></p>
-        <button class="cookieBtn">Ok</button>
+      <p>
+        We use first-party cookies on this website.
+        <small>Only strictly necessary ones.</small>
+      </p>
+      <button class="cookieBtn">Ok</button>
     </div>
     <script src="/scripts/index.js"></script>
-</body>
+  </body>
 </html>
